@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template
 from flask_mysqldb import MySQL
 import MySQLdb.cursors
-from . import mysql
+#from . import mysql
 
 views = Blueprint("views", __name__)
 
