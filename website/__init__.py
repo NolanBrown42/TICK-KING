@@ -5,12 +5,12 @@ from functools import wraps
 from os import path
 import re
 
-from flask_login import LoginManager, login_required, login_user
-import MySQLdb.cursors
-import bcrypt
-import mysql.connector
-from flask_sqlalchemy import SQLAlchemy
-from warnings import catch_warnings
+#from flask_login import LoginManager, login_required, login_user
+#import MySQLdb.cursors
+#import bcrypt
+#import mysql.connector
+#from flask_sqlalchemy import SQLAlchemy
+#rom warnings import catch_warnings
 
 
 def create_app():
