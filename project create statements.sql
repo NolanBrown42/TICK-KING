@@ -12,13 +12,14 @@ DROP TABLE if exists Cards cascade;
 DROP TABLE if exists Frequencies cascade;
 
 CREATE TABLE Users (
-	UserID		INT			PRIMARY KEY,
+	UserID		INT			NOT NULL AUTO_INCREMENT,
 	UserName	VARCHAR(15)	NOT NULL,
 	Email		VARCHAR(25)	NOT NULL,	
-    Passcode	VARCHAR(15)	NOT NULL,
+    Passcode	CHAR(64)NOT NULL,
     FirstName	VARCHAR(15)	NOT NULL,
     LastName	VARCHAR(15),
-    Streak		INT);
+    Streak		INT,
+    PRIMARY KEY (UserID)
 
 CREATE TABLE Awards(
 	AwardID		INT			PRIMARY KEY,
