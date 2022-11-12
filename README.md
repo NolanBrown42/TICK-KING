@@ -5,6 +5,7 @@ Project dependencies:
  - I woud recommend VS code for the IDEA since it supports all languages and it is easy to work with a project that contains many different files and folders
  - Here is the link for Vs code: https://code.visualstudio.com/ (It is free)
  - You will also have to download Python if you havent already: https://www.python.org/downloads/
+ - This video help downloading python and configuring pip command to download the packages below
   
  - This project also depends on a few libraries/packages. The three that must be downloaded are the following:
    - Flask (Web app framework to make our lifes a little easier): https://pypi.org/project/Flask/
