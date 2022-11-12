@@ -19,7 +19,7 @@ CREATE TABLE Users (
     FirstName	VARCHAR(15)	NOT NULL,
     LastName	VARCHAR(15),
     Streak		INT,
-    PRIMARY KEY (UserID)
+    PRIMARY KEY (UserID));
 
 CREATE TABLE Awards(
 	AwardID		INT			PRIMARY KEY,
