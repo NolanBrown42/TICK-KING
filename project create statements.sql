@@ -15,7 +15,7 @@ CREATE TABLE Users (
 	UserID		INT			NOT NULL AUTO_INCREMENT,
 	UserName	VARCHAR(15)	NOT NULL,
 	Email		VARCHAR(25)	NOT NULL,	
-    Passcode	CHAR(64)NOT NULL,
+    Passcode	CHAR(128) NOT NULL,
     FirstName	VARCHAR(15)	NOT NULL,
     LastName	VARCHAR(15),
     Streak		INT,
