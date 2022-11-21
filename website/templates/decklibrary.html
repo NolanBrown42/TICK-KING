@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta cahrset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ticking Dashboard</title>
+        
+        <!-- Montserrat font -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&display=swap" rel="stylesheet">
+        
+        <!-- Material Icons -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+        
+        <!-- Cutsom CSS -->
+        <link rel="stylesheet" href="dashboard.css">
+        <link rel="stylesheet" href="decklibrary.css">
+    </head>
+    
+<body>
+    <div class="grid-container">
+    
+        <!-- Header -->
+        <header class="header">
+            <div class="menu-icon" onclick="openSidebar()">
+                <span class="material-icons-outlined">menu</span>
+            </div>
+            <div class="header-left">
+                <span class="material-icons-outlined">search</span>
+            </div>
+            <div class="header-right">
+                <span class="material-icons-outlined">notifications</span>
+                <span class="material-icons-outlined">email</span>
+                <span class="material-icons-outlined">account_circle</span>
+            </div>
+        </header>
+        <!-- End Header -->
+        
+        <!-- Sidebar -->
+        <aside id="sidebar">
+            <div class="sidebar-title">
+                <div class="sidebar-brand">
+                    <span class="material-icons-outlined">portrait</span> Lydia's Dashboard
+                </div>
+                <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+            </div>
+            
+            <ul class="sidebar-list">
+                <li class="sidebar-list-item">
+                    <span class="material-icons-outlined">dashboard</span><a href="dashboard.html"> Dashboard</a>
+                </li>
+                <li class="sidebar-list-item">
+                    <span class="material-icons-outlined" >crop_7_5</span><a href="decklibrary.html"> My Decks</a>
+                </li>
+                <li class="sidebar-list-item">
+                    <span class="material-icons-outlined">diversity_3</span> Friends
+                </li>
+                <li class="sidebar-list-item">
+                    <span class="material-icons-outlined">emoji_events</span> Awards
+                </li>
+                <li class="sidebar-list-item">
+                    <span class="material-icons-outlined">analytics</span> Analytics
+                </li>
+                <li class="sidebar-list-item">
+                    <span class="material-icons-outlined">settings</span> Settings
+                </li>
+                <li class=sidebar-list-item>
+                    <span class="material-icons-outlined">logout</span><a href="login.html"> Log Out</a>
+                </li>
+                </ul>
+        </aside>
+        <!-- End Sidebar -->
+        
+        <!-- Main -->
+        <main class="main-container">
+            <div class="main-title">
+                <p class="font-weight-bold">MY DECKS</p>
+            </div>
+                <button id="create-deck">Create Deck</button>
+                <button id="import deck">Import Deck</button>
+            
+            <div class="main-decks">
+                
+                <!-- RIGHT HERE ADD LOOP TO FILL OUT THE FOLLOWING ITEMS -->
+                <!-- loop here -->
+                <div class="deck">
+                    <div class="deck-inner">
+                    <!-- Deck name can go here REPLACE PSYCHOLOGY-->
+                        <a href="FCindex.html"><p>Psychology</p></a>
+                    </div>
+                    <!-- Deck ID can go here REPLACE NUMBER-->
+                    <span class="text-primary font-weight-bold">12</span>
+                </div>
+            
+            </div>
+        </main>
+        <!-- End Main -->
+    
+    </div>
+    
+
+</body>
+</html>
