@@ -167,6 +167,23 @@ def create_app():
         except:
             flash("Login required", category='error')
             return redirect(url_for('login'))
+        
+    @app.route('/mylibrary', methods=['GET', 'POST'])
+    @login_required
+    def myLibrary():
+        try:
+            user_id = session['id']
+            username = session['username']
+            #Query to fetch all user's decks
+            #This is a test
+            listTest = createList()
+            return render_template("deckslibrary.html", 
+                username = session['username'], 
+                user_id = session['id'], 
+                ToSendList = listTest)
+        except:
+            flash("Something went wrong!", category='error')
+            return redirect(url_for('dashboard'))
 
     @app.route('/decks', methods=['GET', 'POST'])
     @login_required
