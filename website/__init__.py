@@ -31,19 +31,6 @@ def create_app():
     app.register_blueprint(views, url_prefix = "/")
     #app.register_blueprint(auth, url_prefix = "/")
 
-    """
-    login_manager = LoginManager()
-    login_manager.init_app(app)
-
-    @login_manager.user_loader
-    def load_user(username):
-        cursor = mysql.connection.cursor()
-
-        cursor.execute('SELECT * FROM Users WHERE UserName = % s', (username, ))
-        account_info = cursor.fetchone()
-        return account_info 
-    """
-
     def login_required(f):
         @wraps(f)
         def wrap(*args, **kwargs):
