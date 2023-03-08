@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/decks.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css')}}">
+        <!-- Montserrat font -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&display=swap" rel="stylesheet">
+        <!-- Material Icons -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"  rel="stylesheet">
+    
+    <title>Deck View</title>
+</head>
+<body>
+  
+  <div class="grid-container">
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="menu-icon" onclick="openSidebar()">
+            <span class="material-icons-outlined">menu</span>
+        </div>
+        <div class="header-left">
+            <span class="material-icons-outlined">search</span>
+        </div>
+        <div class="header-right">
+            <span class="material-icons-outlined">notifications</span>
+            <span class="material-icons-outlined">email</span>
+            <span class="material-icons-outlined">account_circle</span>
+        </div>
+    </header>
+    <!-- End Header -->
+    
+    <!-- Sidebar -->
+    <aside id="sidebar">
+        <div class="sidebar-title">
+            <div class="sidebar-brand">
+                <span class="material-icons-outlined">portrait</span> {{username}}'s Dashboard
+            </div>
+            <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+        </div>
+        
+        <ul class="sidebar-list">
+            <li class="sidebar-list-item">
+                <span class="material-icons-outlined">dashboard</span> <a href="/dashboard"> Dashboard</a>
+            </li>
+            <li class="sidebar-list-item">
+                <span class="material-icons-outlined">crop_7_5</span> <a href="/mylibrary"> Decks</a>
+            </li>
+            <li class="sidebar-list-item">
+                <span class="material-icons-outlined">diversity_3</span> Friends
+            </li>
+            <li class="sidebar-list-item">
+                <span class="material-icons-outlined">emoji_events</span> Awards
+            </li>
+            <li class="sidebar-list-item">
+                <span class="material-icons-outlined">analytics</span> Analytics
+            </li>
+            <li class="sidebar-list-item">
+                <span class="material-icons-outlined">settings</span> Settings
+            </li>
+            <li class="sidebar-list-item">
+                <span class="material-icons-outlined">logout</span><a href="/logout"> Log Out</a>
+            </li>
+        </ul>
+    </aside>
+    <!-- End Sidebar -->
+
+  <!--<main>-->
+    <main class="main-container">
+    <header>
+      <div class="container">
+        <div id="header">
+          <h1>Psychology</h1>
+          <div>
+            <button id="edit_button">Edit</button> <!--NEED TO HAVE EDIT BUTTON GO TO DECKS.HTML page-->
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!--TRYING TO MAKE CARD SLIDESHOW-->
+    <div class="container-study-card">
+        <div class="content">
+        <h4>1/25</h4>
+        <p>This will be where the text of the question/answer will be displayed. On click, the answer will show.</p>
+        <button>Previous</button>
+        <button>Next</button>
+        </div>
+    </div>
+    <!--END OF SLIDESHOW-->
+
+    
+   <!--TABLE THAT HOLDS QUESTIONS AND ANSWERS--> 
+   <div>
+    <!--table to hold the cards of the deck-->
+    <table id="table-cards">
+        <!--table headers-->
+        <tr bgcolor="lightgrey">
+            <th width="20">ID</th>
+            <th width="100">Question</th>
+            <th width="100">Answer</th>
+            <th width="20">Status</th><!--Active/Inactive-->
+        </tr>
+        <!--table rows, need to pull this information from the database-->
+        <tr bgcolor="white" align="center">
+            <td>1</td>
+            <td>How large is the moon? I am writing to see if the contents will fit withing the table</td>
+            <td>Very large.</td>
+            <!--Need JS to automatically check status as active when card created-->
+            <td><input type=checkbox name="status"></td>
+        </tr>
+    </table>
+  </div>
+  <!--END OF TABLE-->
+
+  </main>
+  
+</body>
+</html>
