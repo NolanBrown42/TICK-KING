@@ -16,6 +16,7 @@ import re
 def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'CSSE490'
+    app.config['ENV'] = 'development'
     app.config['MYSQL_HOST'] = 'localhost'
     app.config['MYSQL_USER'] = 'root'
     app.config['MYSQL_PASSWORD'] = ''
@@ -47,6 +48,7 @@ def create_app():
     def logout():
         session.clear()
         flash("You have been logged out", category='success')
+        print("User Logged out")
         return redirect(url_for('login'))
 
     @app.route("/signup", methods=['GET', 'POST'])
@@ -159,15 +161,17 @@ def create_app():
     @login_required
     def myLibrary():
         try:
+            print("------------TESTE-------------------")
             user_id = session['id']
             username = session['username']
-            #Query to fetch all user's decks
-            #This is a test
-            listTest = createList()
+            #Calling function to fetch all deck ids user has access to
+            decksList = fetchUserDecks(user_id)
+            print(decksList)
+
             return render_template("deckslibrary.html", 
                 username = session['username'], 
                 user_id = session['id'], 
-                ToSendList = listTest)
+                ToSendList = decksList)
         except:
             flash("Something went wrong!", category='error')
             return redirect(url_for('dashboard'))
@@ -188,4 +192,15 @@ def create_app():
     def recoverpasswd():
         return render_template("recoverpasswd.html")
     
+    def fetchUserDecks(userId):
+        try:
+            cursor = mysql.connection.cursor()
+            cursor.execute('SET @IDnum = % s' , (userId, ))
+            cursor.execute('SELECT DeckID FROM DeckRights WHERE UserID = @IDnum')
+            decks = cursor.fetchall()
+            print("Here")
+        except:
+            print("Problem with fetchShoeInfo function")
+        return decks
+
     return app
