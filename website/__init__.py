@@ -188,6 +188,30 @@ def create_app():
             flash("Something went wrong!", category='error')
             return redirect(url_for('dashboard'))
 
+    @app.route('/deckview', methods=['GET', 'POST'])
+    @login_required
+    def deckview():
+        try:
+            user_id = session['id']
+            username = session['username']
+                
+            return render_template("deckview.html", username = session['username'], user_id = session['id'])
+        except:
+            flash("Something went wrong!", category='error')
+            return redirect(url_for('dashboard'))
+            
+    @app.route('/guidedlearning', methods=['GET', 'POST'])
+    @login_required
+    def guidedlearning():
+        try:
+            user_id = session['id']
+            username = session['username']
+                
+            return render_template("guidedlearning.html", username = session['username'], user_id = session['id'])
+        except:
+            flash("Something went wrong!", category='error')
+            return redirect(url_for('dashboard'))
+
     @app.route('/recoverpasswd', methods=['GET', 'POST'])
     def recoverpasswd():
         return render_template("recoverpasswd.html")
