@@ -188,9 +188,9 @@ def create_app():
             flash("Something went wrong!", category='error')
             return redirect(url_for('dashboard'))
 
-    @app.route('/deckview', methods=['GET', 'POST'])
+    @app.route('/deckview/<int:deckId>', methods=['GET', 'POST'])
     @login_required
-    def deckview():
+    def deckview(deckId):
         try:
             user_id = session['id']
             username = session['username']
