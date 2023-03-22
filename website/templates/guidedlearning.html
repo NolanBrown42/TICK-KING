@@ -1,10 +1,77 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Guided Learning Page</title>
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css')}}">
+			<!-- Montserrat font -->
+			<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&display=swap" rel="stylesheet">
+			<!-- Material Icons -->
+			<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"  rel="stylesheet">
+		
+		<title>Guided Learning Page</title>
+	</head>
 <body>
-	<h1>Guided Learning Page</h1>
+
+	<div class="grid-container">
+    
+		<!-- Header -->
+		<header class="header">
+			<div class="menu-icon" onclick="openSidebar()">
+				<span class="material-icons-outlined">menu</span>
+			</div>
+			<div class="header-left">
+				<span class="material-icons-outlined">search</span>
+			</div>
+			<div class="header-right">
+				<span class="material-icons-outlined">notifications</span>
+				<span class="material-icons-outlined">email</span>
+				<span class="material-icons-outlined">account_circle</span>
+			</div>
+		</header>
+		<!-- End Header -->
+		
+		<!-- Sidebar -->
+		<aside id="sidebar">
+			<div class="sidebar-title">
+				<div class="sidebar-brand">
+					<span class="material-icons-outlined">portrait</span> {{username}}'s Dashboard
+				</div>
+				<span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+			</div>
+			
+			<ul class="sidebar-list">
+				<li class="sidebar-list-item">
+					<span class="material-icons-outlined">dashboard</span> <a href="/dashboard"> Dashboard</a>
+				</li>
+				<li class="sidebar-list-item">
+					<span class="material-icons-outlined">crop_7_5</span> <a href="/mylibrary"> Decks</a>
+				</li>
+				<li class="sidebar-list-item">
+					<span class="material-icons-outlined">diversity_3</span> Friends
+				</li>
+				<li class="sidebar-list-item">
+					<span class="material-icons-outlined">emoji_events</span> Awards
+				</li>
+				<li class="sidebar-list-item">
+					<span class="material-icons-outlined">analytics</span> Analytics
+				</li>
+				<li class="sidebar-list-item">
+					<span class="material-icons-outlined">settings</span> Settings
+				</li>
+				<li class="sidebar-list-item">
+					<span class="material-icons-outlined">logout</span><a href="/logout"> Log Out</a>
+				</li>
+			</ul>
+		</aside>
+		<!-- End Sidebar -->
+	
+		<!--<main>-->
+    <main class="main-container">	
+
+	<h1>Guided Learning</h1>
 	<p>Welcome to this guided learning page! Below are some steps you can follow to learn something new.</p>
 	
 	<h2>Step 1: Define Your Learning Goals</h2>
@@ -23,5 +90,7 @@
 	<p>Finally, celebrate your achievements! Take pride in what you've learned and how far you've come. Reward yourself for your hard work and dedication.</p>
 	
 	<p>Remember, learning is a journey, not a destination. Enjoy the process and keep pushing yourself to learn and grow!</p>
+
+	</main>
 </body>
 </html>
