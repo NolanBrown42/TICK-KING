@@ -5,7 +5,9 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-		<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css')}}">
+        <!--ADD DASHBOARD STYLESHEET-->
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/guidedlearning.css')}}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css')}}">
 			<!-- Montserrat font -->
 			<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&display=swap" rel="stylesheet">
 			<!-- Material Icons -->
@@ -13,84 +15,87 @@
 		
 		<title>Guided Learning Page</title>
 	</head>
-<body>
 
-	<div class="grid-container">
+    <body>
+        <div class="grid-container">
     
-		<!-- Header -->
-		<header class="header">
-			<div class="menu-icon" onclick="openSidebar()">
-				<span class="material-icons-outlined">menu</span>
-			</div>
-			<div class="header-left">
-				<span class="material-icons-outlined">search</span>
-			</div>
-			<div class="header-right">
-				<span class="material-icons-outlined">notifications</span>
-				<span class="material-icons-outlined">email</span>
-				<span class="material-icons-outlined">account_circle</span>
-			</div>
-		</header>
-		<!-- End Header -->
-		
-		<!-- Sidebar -->
-		<aside id="sidebar">
-			<div class="sidebar-title">
-				<div class="sidebar-brand">
-					<span class="material-icons-outlined">portrait</span> {{username}}'s Dashboard
-				</div>
-				<span class="material-icons-outlined" onclick="closeSidebar()">close</span>
-			</div>
-			
-			<ul class="sidebar-list">
-				<li class="sidebar-list-item">
-					<span class="material-icons-outlined">dashboard</span> <a href="/dashboard"> Dashboard</a>
-				</li>
-				<li class="sidebar-list-item">
-					<span class="material-icons-outlined">crop_7_5</span> <a href="/mylibrary"> Decks</a>
-				</li>
-				<li class="sidebar-list-item">
-					<span class="material-icons-outlined">diversity_3</span> Friends
-				</li>
-				<li class="sidebar-list-item">
-					<span class="material-icons-outlined">emoji_events</span> Awards
-				</li>
-				<li class="sidebar-list-item">
-					<span class="material-icons-outlined">analytics</span> Analytics
-				</li>
-				<li class="sidebar-list-item">
-					<span class="material-icons-outlined">settings</span> Settings
-				</li>
-				<li class="sidebar-list-item">
-					<span class="material-icons-outlined">logout</span><a href="/logout"> Log Out</a>
-				</li>
-			</ul>
-		</aside>
-		<!-- End Sidebar -->
-	
-		<!--<main>-->
-    <main class="main-container">	
-
-	<h1>Guided Learning</h1>
-	<p>Welcome to this guided learning page! Below are some steps you can follow to learn something new.</p>
-	
-	<h2>Step 1: Define Your Learning Goals</h2>
-	<p>Before you begin, it's important to define your learning goals. What do you want to learn? Why is it important to you? How will you know when you've achieved your learning goals?</p>
-	
-	<h2>Step 2: Gather Resources</h2>
-	<p>Next, gather the resources you'll need to learn. This may include books, articles, videos, online courses, or other materials. Make a list of these resources and keep them handy as you learn.</p>
-	
-	<h2>Step 3: Start Learning</h2>
-	<p>Now it's time to start learning! Use the resources you've gathered to begin your learning journey. Take notes, ask questions, and practice what you've learned to solidify your understanding.</p>
-	
-	<h2>Step 4: Assess Your Progress</h2>
-	<p>Periodically assess your progress to see how far you've come. Are you meeting your learning goals? Have you encountered any obstacles or challenges? Do you need to adjust your learning approach?</p>
-	
-	<h2>Step 5: Celebrate Your Achievements</h2>
-	<p>Finally, celebrate your achievements! Take pride in what you've learned and how far you've come. Reward yourself for your hard work and dedication.</p>
-	
-	<p>Remember, learning is a journey, not a destination. Enjoy the process and keep pushing yourself to learn and grow!</p>
-
+            <!-- Header -->
+            <header class="header">
+                <div class="menu-icon" onclick="openSidebar()">
+                    <span class="material-icons-outlined">menu</span>
+                </div>
+                <div class="header-left">
+                    <span class="material-icons-outlined">search</span>
+                </div>
+                <div class="header-right">
+                    <span class="material-icons-outlined">notifications</span>
+                    <span class="material-icons-outlined">email</span>
+                    <span class="material-icons-outlined">account_circle</span>
+                </div>
+            </header>
+            <!-- End Header -->
+            
+            <!-- Sidebar -->
+            <aside id="sidebar">
+                <div class="sidebar-title">
+                    <div class="sidebar-brand">
+                        <span class="material-icons-outlined">portrait</span> {{username}}'s Dashboard
+                    </div>
+                    <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+                </div>
+                
+                <ul class="sidebar-list">
+                    <li class="sidebar-list-item">
+                        <span class="material-icons-outlined">dashboard</span> <a href="/dashboard"> Dashboard</a>
+                    </li>
+                    <li class="sidebar-list-item">
+                        <span class="material-icons-outlined">crop_7_5</span> <a href="/mylibrary"> Decks</a>
+                    </li>
+                    <li class="sidebar-list-item">
+                        <span class="material-icons-outlined">diversity_3</span> Friends
+                    </li>
+                    <li class="sidebar-list-item">
+                        <span class="material-icons-outlined">emoji_events</span> Awards
+                    </li>
+                    <li class="sidebar-list-item">
+                        <span class="material-icons-outlined">analytics</span> Analytics
+                    </li>
+                    <li class="sidebar-list-item">
+                        <span class="material-icons-outlined">settings</span> Settings
+                    </li>
+                    <li class="sidebar-list-item">
+                        <span class="material-icons-outlined">logout</span><a href="/logout"> Log Out</a>
+                    </li>
+                </ul>
+            </aside>
+            <!-- End Sidebar -->
+        
+            <!--<main>-->
+        <main class="main-container">	
+    
+        <h1>Guided Learning</h1>
+    
+    
+	<section class="container">
+        <div class="card-gl">
+            <img src="{{ url_for('static', filename='images/cards.png')}}" class="card-img">
+            <h2>Guided Learning</h2>
+            <p>You have <strong>8</strong> cards to study today! Click here to get started on guided learning!</p>
+            <a href="">Start <span>&rarr;</span></a>
+        </div>
+        <div class="card-gl">
+            <img src="{{ url_for('static', filename='images/Review.png')}}" class="card-img">
+            <h2>Review</h2>
+            <p>Want to review the guided learning cards from today? Practice more to study!</p>
+            <a href="">Review <span>&rarr;</span></a>
+        </div>
+        <div class="card-gl">
+            <img src="{{ url_for('static', filename='images/Prioritize.png')}}" class="card-img">
+            <h2>Prioritize</h2>
+            <p>Want to add more cards to study list? Add, delete, or edit cards for guided learning here.</p>
+            <a href="">Prioritize <span>&rarr;</span></a>
+        </div>
+    
 	</main>
 </body>
 </html>
