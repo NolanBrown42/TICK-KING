@@ -1,0 +1,149 @@
+/**container indicates the size of the flash card **/
+.card-container{
+    position: relative;
+    width: 650px;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+/** flash card covers the size of main container **/
+.thecard{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /** the line below is what reveals the back side **/
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+}
+
+.thecard h3{
+    font-size: 18px;
+}
+
+.thefront{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /** the line below hides the information when flipped **/
+    backface-visibility: hidden;
+    background: #fdfdfd;
+    color: #333;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    border-radius: 20px;
+    font-size: 24px;
+}
+
+.card-padding{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.theback{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: #fdfdfd;
+    color: #333;
+    transform: rotateY(180deg);
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    border-radius: 20px;
+    font-size: 24px;
+}
+
+/** causes the card to flip when cursor hovers **/
+.thecard:hover{
+    transform: rotateY(180deg);
+}
+
+.bottom-content{
+    position: relative;
+    width: 700px;
+    height: 250px;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 15px;
+}
+
+.bottom-content p{
+    font-size: 24px;
+    margin: auto;
+    text-align: center;
+    padding: 0;
+}
+
+.num-box p{
+    font-size: 20px;
+}
+
+.wrap{
+    display: flex;
+    justify-content: center; 
+}
+
+.little-text p{
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.rating-scale {
+    display: inline-block;
+
+  }
+  
+  .rating-scale input[type="radio"] {
+    display: none;
+  }
+  
+  .rating-scale label {
+    display: inline-block;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+    color: #333;
+    border: 1px solid #333;
+    background-color: #fff;
+    border-radius: 50%;
+    margin-top: 15px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .rating-scale input[type="radio"]:checked + label {
+    background-color: #f1c40f;
+    color: #fff;
+  }
+
+  .rating-scale label:hover {
+    background-color: #f1c40f;
+    color: #fff;
+  }
+  
+  input[type="submit"] {
+    background-color: #568cd6;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+
+  .submit-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }

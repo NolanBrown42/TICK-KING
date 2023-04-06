@@ -5,11 +5,14 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-        <!--ADD DASHBOARD STYLESHEET-->
+
+        <!-- css stylesheets -->
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/guidedlearning.css')}}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css')}}">
+
 			<!-- Montserrat font -->
 			<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&display=swap" rel="stylesheet">
+
 			<!-- Material Icons -->
 			<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"  rel="stylesheet">
 		
@@ -81,7 +84,7 @@
             <img src="{{ url_for('static', filename='images/cards.png')}}" class="card-img">
             <h2>Guided Learning</h2>
             <p>You have <strong>8</strong> cards to study today! Click here to get started on guided learning!</p>
-            <a href="">Start <span>&rarr;</span></a>
+            <a href="{{ url_for('static', filename='templates/guidedcards.html')}}">Start <span>&rarr;</span></a>
         </div>
         <div class="card-gl">
             <img src="{{ url_for('static', filename='images/Review.png')}}" class="card-img">
@@ -97,5 +100,6 @@
         </div>
     
 	</main>
+    </div>
 </body>
 </html>

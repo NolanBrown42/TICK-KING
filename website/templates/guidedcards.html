@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+        <!-- style sheets -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/guidedcards.css')}}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css')}}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+			
+        <!-- Montserrat font -->
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&display=swap" rel="stylesheet">
+		
+        <!-- Material Icons -->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"  rel="stylesheet">
+		
+		<title>Guided Learning Page</title>
+	</head>
+
+    <body>
+        <div class="grid-container">
+    
+            <!-- Header -->
+            <header class="header">
+                <div class="menu-icon" onclick="openSidebar()">
+                    <span class="material-icons-outlined">menu</span>
+                </div>
+                <div class="header-left">
+                    <span class="material-icons-outlined">search</span>
+                </div>
+                <div class="header-right">
+                    <span class="material-icons-outlined">notifications</span>
+                    <span class="material-icons-outlined">email</span>
+                    <span class="material-icons-outlined">account_circle</span>
+                </div>
+            </header>
+            <!-- End Header -->
+            
+            <!-- Sidebar -->
+            <aside id="sidebar">
+                <div class="sidebar-title">
+                    <div class="sidebar-brand">
+                        <span class="material-icons-outlined">portrait</span> {{username}}'s Dashboard
+                    </div>
+                    <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+                </div>
+                
+                <ul class="sidebar-list">
+                    <li class="sidebar-list-item">
+                        <span class="material-icons-outlined">dashboard</span> <a href="/dashboard"> Dashboard</a>
+                    </li>
+                    <li class="sidebar-list-item">
+                        <span class="material-icons-outlined">crop_7_5</span> <a href="/mylibrary"> Decks</a>
+                    </li>
+                    <li class="sidebar-list-item">
+                        <span class="material-icons-outlined">diversity_3</span> Friends
+                    </li>
+                    <li class="sidebar-list-item">
+                        <span class="material-icons-outlined">emoji_events</span> Awards
+                    </li>
+                    <li class="sidebar-list-item">
+                        <span class="material-icons-outlined">analytics</span> Analytics
+                    </li>
+                    <li class="sidebar-list-item">
+                        <span class="material-icons-outlined">settings</span> Settings
+                    </li>
+                    <li class="sidebar-list-item">
+                        <span class="material-icons-outlined">logout</span><a href="/logout"> Log Out</a>
+                    </li>
+                </ul>
+            </aside>
+            <!-- End Sidebar -->
+
+            <!--MAIN CODE-->
+            <main class="main-container">
+            
+            <!-- Flash card for guided learning -->
+            <div class="card-container">
+                <div class="thecard">
+                    <div class="thefront">
+                        <div class="card-padding">
+                        <h3>Question:</h3>
+                        <p>Why did Mr. Atencio's house have so many problems with it?</p>
+                        </div>
+                    </div>
+                    <div class="theback">
+                        <h3>Answer:</h3>
+                        <div class="card-padding">
+                        <p>The workers have gotten lazy and the project manager needs to take a project management class!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Writing and buttons underneath -->
+            <div class="bottom-content">
+                <div class="num-box">
+                    <p>1 / 8</p>
+                </div>
+                <br> <!-- line break -->
+                <p>How confident were you with your answer?</p>
+                <div class="wrap">
+                <div class="rating-scale">
+                    <input type="radio" name="rating" id="rating-0" value="0">
+                    <label for="rating-0">0</label>
+                    <input type="radio" name="rating" id="rating-1" value="1">
+                    <label for="rating-1">1</label>
+                    <input type="radio" name="rating" id="rating-2" value="2">
+                    <label for="rating-2">2</label>
+                    <input type="radio" name="rating" id="rating-3" value="3">
+                    <label for="rating-3">3</label>
+                    <input type="radio" name="rating" id="rating-4" value="4">
+                    <label for="rating-4">4</label>
+                    <input type="radio" name="rating" id="rating-5" value="5">
+                    <label for="rating-5">5</label>
+                </div>
+                </div>
+                <div class="little-text">
+                    <p>Review card again in:<br>0 - immediately | 1 - one day | 2 - three days | 3 - five days | 4 - one week | 5 - two weeks</p>
+                </div>
+                
+                <!-- Button to submit the rating -->
+                <div class="submit-btn">
+                    <form>
+                        <input type="submit" value="submit" name="rate-btn">
+                    </form>
+                </div>
+            </div>
+
+            </main>
+        </div>
+    </body>
+</html>
