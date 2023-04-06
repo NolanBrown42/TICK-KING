@@ -75,8 +75,9 @@
         
             <!--<main>-->
         <main class="main-container">	
-    
-        <h1>Guided Learning</h1>
+            <div class="main-title">
+                <p class="font-weight-bold">GUIDED LEARNING</p>
+            </div>
     
     
 	<section class="container">
@@ -84,7 +85,8 @@
             <img src="{{ url_for('static', filename='images/cards.png')}}" class="card-img">
             <h2>Guided Learning</h2>
             <p>You have <strong>8</strong> cards to study today! Click here to get started on guided learning!</p>
-            <a href="{{ url_for('static', filename='templates/guidedcards.html')}}">Start <span>&rarr;</span></a>
+            <!-- Have url to guided cards -->
+            <a href="">Start <span>&rarr;</span></a>
         </div>
         <div class="card-gl">
             <img src="{{ url_for('static', filename='images/Review.png')}}" class="card-img">

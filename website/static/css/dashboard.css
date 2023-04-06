@@ -56,3 +56,16 @@
 .card-inner > span {
     font-size: 35px;
 }
+
+.mid-portion{
+    padding-top: 30px;
+}
+
+.mid-portion a{
+    font-size: 20px;
+    color:  black;
+}
+
+.mid-portion a:hover{
+    color: blue;
+}
