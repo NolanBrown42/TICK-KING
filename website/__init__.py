@@ -211,6 +211,18 @@ def create_app():
         except:
             flash("Something went wrong!", category='error')
             return redirect(url_for('dashboard'))
+        
+    @app.route('/guidedcards', methods=['GET', 'POST'])
+    def guidedcards():
+        try:
+            user_id = session['id']
+            username = session['username']
+                
+            return render_template("guidedcards.html", username = session['username'], user_id = session['id'])
+        except:
+            flash("Something went wrong!", category='error')
+            return redirect(url_for('dashboard'))
+
 
     @app.route('/recoverpasswd', methods=['GET', 'POST'])
     def recoverpasswd():
