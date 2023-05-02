@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/decks.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/deckview.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/template.css')}}">
         <!-- Montserrat font -->
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&display=swap" rel="stylesheet">
@@ -82,16 +82,30 @@
       </div>
     </header>
 
-    <!--TRYING TO MAKE CARD SLIDESHOW-->
-    <div class="container-study-card">
-        <div class="content">
-        <h4>1/25</h4>
-        <p>This will be where the text of the question/answer will be displayed. On click, the answer will show.</p>
-        <button>Previous</button>
-        <button>Next</button>
+    <!-- Flash card for studying -->
+    <div class="card-container">
+        <div class="thecard">
+            <div class="thefront">
+                <div class="card-padding">
+                <h3>Question:</h3>
+                <p>Why did Mr. Atencio's house have so many problems with it?</p>
+                </div>
+            </div>
+            <div class="theback">
+                <h3>Answer:</h3>
+                <div class="card-padding">
+                <p>The workers have gotten lazy and the project manager needs to take a project management class!</p>
+                </div>
+            </div>
         </div>
     </div>
-    <!--END OF SLIDESHOW-->
+
+    <!--buttons to press onto the next card -->
+    <div class="bottom-content">
+        <button>Previous</button>
+        <h4>1/25</h4>
+        <button>Next</button>
+    </div>
 
     
    <!--TABLE THAT HOLDS QUESTIONS AND ANSWERS--> 
