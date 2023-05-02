@@ -74,7 +74,7 @@
     <header>
       <div class="container">
         <div id="header">
-          <h1>Psychology</h1>
+          <h1>{{deckName}}</h1>
           <div>
             <button id="edit_button">Edit</button> <!--NEED TO HAVE EDIT BUTTON GO TO DECKS.HTML page-->
           </div>
@@ -88,13 +88,13 @@
             <div class="thefront" onclick="flipCard()">
                 <div class="card-padding">
                 <h3>Question:</h3>
-                <p>Why did Mr. Atencio's house have so many problems with it?</p>
+                <p>{{cards[0][0]}}</p>
                 </div>
             </div>
             <div class="theback" onclick="flipCard()">
                 <h3>Answer:</h3>
                 <div class="card-padding">
-                <p>The workers have gotten lazy and the project manager needs to take a project management class!</p>
+                <p>{{cards[0][1]}}</p>
                 </div>
             </div>
         </div>
@@ -104,7 +104,7 @@
     <div class="bottom-content-container">
         <div class="bottom-content">
             <button onclick="">Previous</button> <!-- fill in onclick() function to moved to next card-->
-            <h4>1/25</h4>
+            <h4>1/{{upper_bound + 1}}</h4>
             <button onclick="">Next</button> <!-- fill in onclick() function to moved to next card-->
         </div>
     </div>
@@ -122,14 +122,16 @@
             <th width="20">Status</th><!--Active/Inactive-->
         </tr>
         <!--table rows, need to pull this information from the database-->
+        {% for card in cards %}
         <tr bgcolor="white" align="center">
-            <td>1</td>
-            <td>How large is the moon? I am writing to see if the contents will fit withing the table</td>
-            <td>Very large.</td>
+            <td>{{card[2]}}</td>
+            <td>{{card[0]}}</td>
+            <td>{{card[1]}}</td>
             <!--Need JS to automatically check status as active when card created-->
             <td><input type=checkbox name="status"></td>
         </tr>
-    </table>
+        {% endfor %}
+    </table>    
   </div>
   <!--END OF TABLE-->
 

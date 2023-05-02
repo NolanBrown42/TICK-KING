@@ -171,7 +171,8 @@ def create_app():
             return render_template("deckslibrary.html", 
                 username = session['username'], 
                 user_id = session['id'], 
-                ToSendList = decksList)
+                ToSendList = decksList, 
+                count = 0)
         except:
             flash("Something went wrong!", category='error')
             return redirect(url_for('dashboard'))
@@ -188,14 +189,19 @@ def create_app():
             flash("Something went wrong!", category='error')
             return redirect(url_for('dashboard'))
 
-    @app.route('/deckview/<int:deckId>', methods=['GET', 'POST'])
+    @app.route('/deckview/<string:deckName>/<int:deckId>', methods=['GET', 'POST'])
     @login_required
-    def deckview(deckId):
+    def deckview(deckName, deckId):
         try:
-            user_id = session['id']
-            username = session['username']
+            cards = fetchPromptsAnswers(deckId=deckId)
+            upper_bound = len(cards) - 1
                 
-            return render_template("deckview.html", username = session['username'], user_id = session['id'])
+            return render_template("deckview.html", 
+                                   username = session['username'], 
+                                   user_id = session['id'], 
+                                   cards=cards,
+                                   deckName=deckName, 
+                                   upper_bound=upper_bound)
         except:
             flash("Something went wrong!", category='error')
             return redirect(url_for('dashboard'))
@@ -243,6 +249,17 @@ def create_app():
             print("Problem with fetchShoeInfo function")
         return decks
     
-    #Add function to return deck information
+    def fetchPromptsAnswers(deckId):
+        try:
+            cursor = mysql.connection.cursor()
+            cursor.execute('SET @DeckNum = % s' , (deckId, ))
+            cursor.execute('SELECT Prompt, Answer, CardID FROM Cards WHERE Cards.DeckID = @DeckNum')
 
+            cards = cursor.fetchall()
+
+        except Exception as e:
+            print(f'Error: {e}')
+
+        return(cards)
+        
     return app
