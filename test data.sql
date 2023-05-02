@@ -134,7 +134,7 @@ INSERT INTO Cards VALUES(10024, 13, 'Wie lautet die deutsche Übersetzung des Wo
 INSERT INTO Cards VALUES(10025, 13, 'Wie sagt man "Guten Morgen" auf Englisch?', 'Good morning');
 INSERT INTO Cards VALUES(10026, 13, 'Was bedeutet "danke" auf Englisch?', 'Thank you');
 INSERT INTO Cards VALUES(10027, 13, 'Wie lautet die deutsche Übersetzung des Wortes "computer"?', 'Computer');
-INSERT INTO Cards VALUES(10028, 13, 'Wie sagt man "Ich verstehe nicht" auf Englisch?', 'I don\'t understand');
+INSERT INTO Cards VALUES(10028, 13, 'Wie sagt man "Ich verstehe nicht" auf Englisch?', 'I do not understand');
 INSERT INTO Cards VALUES(10029, 13, 'Was bedeutet "bitte" auf Englisch?', 'Please');
 INSERT INTO Cards VALUES(10030, 13, 'Wie sagt man "Guten Abend" auf Englisch?', 'Good evening');
 INSERT INTO Cards VALUES(10031, 13, 'Was ist die deutsche Übersetzung des Wortes "dog"?', 'Hund');
