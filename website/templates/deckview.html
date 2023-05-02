@@ -85,13 +85,13 @@
     <!-- Flash card for studying -->
     <div class="card-container">
         <div class="thecard">
-            <div class="thefront">
+            <div class="thefront" onclick="flipCard()">
                 <div class="card-padding">
                 <h3>Question:</h3>
                 <p>Why did Mr. Atencio's house have so many problems with it?</p>
                 </div>
             </div>
-            <div class="theback">
+            <div class="theback" onclick="flipCard()">
                 <h3>Answer:</h3>
                 <div class="card-padding">
                 <p>The workers have gotten lazy and the project manager needs to take a project management class!</p>
@@ -101,10 +101,12 @@
     </div>
 
     <!--buttons to press onto the next card -->
-    <div class="bottom-content">
-        <button>Previous</button>
-        <h4>1/25</h4>
-        <button>Next</button>
+    <div class="bottom-content-container">
+        <div class="bottom-content">
+            <button onclick="">Previous</button> <!-- fill in onclick() function to moved to next card-->
+            <h4>1/25</h4>
+            <button onclick="">Next</button> <!-- fill in onclick() function to moved to next card-->
+        </div>
     </div>
 
     
