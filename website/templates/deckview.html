@@ -82,32 +82,33 @@
       </div>
     </header>
 
-    <!-- Flash card for studying -->
-    <div class="card-container">
-        <div class="thecard">
-            <div class="thefront" onclick="flipCard()">
-                <div class="card-padding">
+<!-- Flash card for studying -->
+<div class="card-container">
+    <div class="thecard">
+        <div class="thefront" onclick="flipCard()">
+            <div class="card-padding">
                 <h3>Question:</h3>
-                <p>{{cards[0][0]}}</p>
-                </div>
+                <p id="question">{{cards[0][0]}}</p>
             </div>
-            <div class="theback" onclick="flipCard()">
-                <h3>Answer:</h3>
-                <div class="card-padding">
-                <p>{{cards[0][1]}}</p>
-                </div>
+        </div>
+        <div class="theback" onclick="flipCard()">
+            <h3>Answer:</h3>
+            <div class="card-padding">
+                <p id="answer">{{cards[0][1]}}</p>
             </div>
         </div>
     </div>
+</div>
 
-    <!--buttons to press onto the next card -->
-    <div class="bottom-content-container">
-        <div class="bottom-content">
-            <button onclick="">Previous</button> <!-- fill in onclick() function to moved to next card-->
-            <h4>1/{{upper_bound + 1}}</h4>
-            <button onclick="">Next</button> <!-- fill in onclick() function to moved to next card-->
-        </div>
+<!-- buttons to press onto the next card -->
+<div class="bottom-content-container">
+    <div class="bottom-content">
+        <button onclick="prevCard()">Previous</button>
+        <h4><span id="card-number">1</span>/{{upper_bound + 1}}</h4>
+        <button onclick="nextCard()">Next</button>
     </div>
+</div>
+
 
     
    <!--TABLE THAT HOLDS QUESTIONS AND ANSWERS--> 
@@ -135,7 +136,6 @@
   </div>
   <!--END OF TABLE-->
 
-  </main>
-  
+  </main>  
 </body>
 </html>

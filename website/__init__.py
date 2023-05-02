@@ -193,15 +193,18 @@ def create_app():
     @login_required
     def deckview(deckName, deckId):
         try:
-            cards = fetchPromptsAnswers(deckId=deckId)
+            cards = fetchPromptsAnswers(deckId=deckId)            
             upper_bound = len(cards) - 1
+
+            count = 0
                 
             return render_template("deckview.html", 
                                    username = session['username'], 
                                    user_id = session['id'], 
                                    cards=cards,
                                    deckName=deckName, 
-                                   upper_bound=upper_bound)
+                                   upper_bound=upper_bound,
+                                   count=count)
         except:
             flash("Something went wrong!", category='error')
             return redirect(url_for('dashboard'))
