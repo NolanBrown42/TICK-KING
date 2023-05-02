@@ -1,6 +1,6 @@
 /*Users fake data*/
 INSERT INTO Users VALUES(1001, 'CSLuke', 'csluke@outlook.com', '$5$rounds=535000$/ckdaMK/e1Ovw3ds$WvQpZPNivK.VU8WLSI31JMftDZMfufKGQ1YMGcZiaz2', 'Luke', 'Smith',0);
-INSERT INTO Users VALUES(1002, 'Vini', 'vini@gmail.com', '$5$rounds=535000$/ckdaMK/e1Ovw3ds$WvQpZPNivK.VU8WLSI31JMftDZMfufKGQ1YMGcZiaz2', 'Vinicious', '',0);
+INSERT INTO Users VALUES(1002, 'Vini', 'vini@gmail.com', '$5$rounds=535000$/ckdaMK/e1Ovw3ds$WvQpZPNivK.VU8WLSI31JMftDZMfufKGQ1YMGcZiaz2', 'Vinicius', '',0);
 
 /*Deck fake data*/
 INSERT INTO Decks VALUES(11,'Math',TRUE);
