@@ -109,6 +109,7 @@ INSERT INTO DeckRights VALUES(1018, 21, 'Owner');
 INSERT INTO Cards VALUES(10001, 11, '2+2=','4');
 INSERT INTO Cards VALUES(10002, 11, '3-17=','-14');
 INSERT INTO Cards VALUES(10003, 12, 'אמר','he said');
+
 INSERT INTO Cards VALUES(10004, 12, 'כאשר','when');
 INSERT INTO Cards VALUES(10005, 11, '17 x 3 =','51');
 INSERT INTO Cards VALUES(10006, 11, '6-7=','-1');
@@ -137,36 +138,35 @@ INSERT INTO Cards VALUES(10028, 13, 'Wie sagt man "Ich verstehe nicht" auf Engli
 INSERT INTO Cards VALUES(10029, 13, 'Was bedeutet "bitte" auf Englisch?', 'Please');
 INSERT INTO Cards VALUES(10030, 13, 'Wie sagt man "Guten Abend" auf Englisch?', 'Good evening');
 INSERT INTO Cards VALUES(10031, 13, 'Was ist die deutsche Übersetzung des Wortes "dog"?', 'Hund');
-INSERT INTO Cards VALUES(32, 12, 'פתח', 'open');
-INSERT INTO Cards VALUES(33, 12, 'סגור', 'closed');
-INSERT INTO Cards VALUES(34, 12, 'רץ', 'run');
-INSERT INTO Cards VALUES(35, 12, 'שחק', 'play');
-INSERT INTO Cards VALUES(36, 12, 'קפוץ', 'jump');
-INSERT INTO Cards VALUES(37, 12, 'צחק', 'laugh');
-INSERT INTO Cards VALUES(38, 12, 'צלם', 'photograph');
-INSERT INTO Cards VALUES(39, 12, 'שתה', 'drink');
-INSERT INTO Cards VALUES(40, 12, 'אכל', 'eat');
-INSERT INTO Cards VALUES(41, 12, 'כתב', 'write');
-INSERT INTO Cards VALUES(42, 12, 'קרא', 'read');
-INSERT INTO Cards VALUES(43, 12, 'למד', 'learn');
-INSERT INTO Cards VALUES(44, 12, 'טס', 'fly');
-INSERT INTO Cards VALUES(45, 12, 'נוס', 'escape');
-INSERT INTO Cards VALUES(46, 12, 'התלבש', 'dress up');
-INSERT INTO Cards VALUES(47, 12, 'שמע', 'hear');
-INSERT INTO Cards VALUES(48, 12, 'דיבר', 'speak');
-INSERT INTO Cards VALUES(49, 12, 'קנה', 'buy');
-INSERT INTO Cards VALUES(50, 12, 'מכר', 'sell');
-INSERT INTO Cards VALUES(51, 12, 'שכח', 'forget');
-INSERT INTO Cards VALUES(52, 12, 'זכר', 'remember');
-INSERT INTO Cards VALUES(53, 12, 'בקש', 'ask');
-INSERT INTO Cards VALUES(54, 12, 'תן', 'give');
-INSERT INTO Cards VALUES(55, 12, 'קח', 'take');
-INSERT INTO Cards VALUES(56, 12, 'טייל', 'travel');
+INSERT INTO Cards VALUES(10032, 12, 'פתח', 'open');
+INSERT INTO Cards VALUES(10033, 12, 'סגור', 'closed');
+INSERT INTO Cards VALUES(10034, 12, 'רץ', 'run');
+INSERT INTO Cards VALUES(10035, 12, 'שחק', 'play');
+INSERT INTO Cards VALUES(10036, 12, 'קפוץ', 'jump');
+INSERT INTO Cards VALUES(10037, 12, 'צחק', 'laugh');
+INSERT INTO Cards VALUES(10038, 12, 'צלם', 'photograph');
+INSERT INTO Cards VALUES(10039, 12, 'שתה', 'drink');
+INSERT INTO Cards VALUES(10040, 12, 'אכל', 'eat');
+INSERT INTO Cards VALUES(10041, 12, 'כתב', 'write');
+INSERT INTO Cards VALUES(10042, 12, 'קרא', 'read');
+INSERT INTO Cards VALUES(10043, 12, 'למד', 'learn');
+INSERT INTO Cards VALUES(10044, 12, 'טס', 'fly');
+INSERT INTO Cards VALUES(10045, 12, 'נוס', 'escape');
+INSERT INTO Cards VALUES(10046, 12, 'התלבש', 'dress up');
+INSERT INTO Cards VALUES(10047, 12, 'שמע', 'hear');
+INSERT INTO Cards VALUES(10048, 12, 'דיבר', 'speak');
+INSERT INTO Cards VALUES(10049, 12, 'קנה', 'buy');
+INSERT INTO Cards VALUES(10050, 12, 'מכר', 'sell');
+INSERT INTO Cards VALUES(10051, 12, 'שכח', 'forget');
+INSERT INTO Cards VALUES(10052, 12, 'זכר', 'remember');
+INSERT INTO Cards VALUES(10053, 12, 'בקש', 'ask');
+INSERT INTO Cards VALUES(10054, 12, 'תן', 'give');
+INSERT INTO Cards VALUES(10055, 12, 'קח', 'take');
+INSERT INTO Cards VALUES(10056, 12, 'טייל', 'travel');
 
 
 
 
 /*Friends fake data*/
 INSERT INTO Friends VALUES(1001, 1002);
-
 
