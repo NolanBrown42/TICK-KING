@@ -211,14 +211,16 @@ def create_app():
         except:
             flash("Something went wrong!", category='error')
             return redirect(url_for('dashboard'))
+
         
     @app.route('/guidedcards', methods=['GET', 'POST'])
+    @login_required
     def guidedcards():
         try:
             user_id = session['id']
             username = session['username']
                 
-            return render_template("guidedcards.html", username = session['username'], user_id = session['id'])
+            return render_template("guidedcards.html", username = session['username'] , user_id = session['id'])
         except:
             flash("Something went wrong!", category='error')
             return redirect(url_for('dashboard'))
@@ -231,12 +233,16 @@ def create_app():
     def fetchUserDecks(userId):
         try:
             cursor = mysql.connection.cursor()
+            #SELECT DeckName, Decks.DeckID FROM Decks, DeckRights WHERE Decks.DeckID = DeckRights.DeckID AND UserID = @IDnnum;
+            #SELECT DeckName, DeckID FROM Decks WHERE DeckID IN (SELECT DeckID FROM DeckRights WHERE UserID = @IDnum);
             cursor.execute('SET @IDnum = % s' , (userId, ))
-            cursor.execute('SELECT DeckID FROM DeckRights WHERE UserID = @IDnum')
+            cursor.execute('SELECT DeckName, DeckID FROM Decks WHERE DeckID IN (SELECT DeckID FROM DeckRights WHERE UserID = @IDnum)')
             decks = cursor.fetchall()
             print("Here")
         except:
             print("Problem with fetchShoeInfo function")
         return decks
+    
+    #Add function to return deck information
 
     return app
