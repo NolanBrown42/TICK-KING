@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/**container indicates the size of the flash card **/
+.card-container{
+  position: relative;
+  width: 650px;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-top: 25px;
+}
+
+/** flash card covers the size of main container **/
+.thecard{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /** the line below is what reveals the back side **/
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+}
+
+.thecard h3{
+  font-size: 18px;
+}
+
+.thefront{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /** the line below hides the information when flipped **/
+  backface-visibility: hidden;
+  background: #fdfdfd;
+  color: #333;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 20px;
+  font-size: 24px;
+}
+
+.card-padding{
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.theback{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background: #fdfdfd;
+  color: #333;
+  transform: rotateY(180deg);
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 20px;
+  font-size: 24px;
+}
+
+/** causes the card to flip when cursor hovers **/
+.thecard:hover{
+  transform: rotateY(180deg);
+}
+
+/** END OF FLASHCARD CSS **/
+
+/* bottom content */
+.bottom-content-container{
+  position: relative;
+  width: 500px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-top: 25px;
+}
+
+.bottom-content{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display:inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom-content > button{
+  background-color: #568cd6;
+  color: white;
+  font-size: 18px;
+  min-width: 100px;
+}
+.bottom-content > button:hover{
+  background-color: #95aed1;
+  color: black;
+}
+
+.bottom-content > h4{
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+#table-cards {
+  padding-bottom: 20px;
+  padding-top: 20px;
+  background-color: #e6eBed;
+  border-color: #666666;
+  width: 100%;
+}
+
+#table-cards td{
+  padding: 5px 5px 5px 5px;
+}
+  
+body{
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  background: whitesmoke;
+}
+
+button{
+  padding: 8px;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  background: whitesmoke;
+}
+
+button:hover{
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.container{
+  width: auto;
+  margin: auto;
+}
+
+header{background-color: #fff;}
+
+#header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 70px;
+  padding: 0 20px;
+  background: #fff;
+}
+
+#header button{
+  font-family: inherit;
+  border: 1px solid red;
+}
