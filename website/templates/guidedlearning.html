@@ -4,17 +4,17 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		
-        <!-- style sheets -->
-		<link rel="stylesheet" href="{{ url_for('static', filename='css/guidedcards.css')}}">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+        <!-- css stylesheets -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/guidedlearning.css')}}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/template.css')}}">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-			
-        <!-- Montserrat font -->
-		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&display=swap" rel="stylesheet">
-		
-        <!-- Material Icons -->
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"  rel="stylesheet">
+
+			<!-- Montserrat font -->
+			<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&display=swap" rel="stylesheet">
+
+			<!-- Material Icons -->
+			<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"  rel="stylesheet">
 		
 		<title>Guided Learning Page</title>
 	</head>
@@ -72,122 +72,36 @@
                 </ul>
             </aside>
             <!-- End Sidebar -->
-
-            <!--MAIN CODE-->
-            <main class="main-container">
-            
-            <!-- Flash card for guided learning -->
-            <div class="card-container">
-                <div class="thecard">
-                    <div id="front-container" class="thefront">
-                    </div>
-                    <div id="back-container" class="theback"></div>
-                </div>
-            </div>
-            
-            <!-- Writing and buttons underneath -->
-            <div class="bottom-content">
-                <div class="num-box" id="num-container">
-                </div>
-                <br> <!-- line break -->
-                <p>How confident were you with your answer?</p>
-                <div class="wrap">
-                <div class="rating-scale">
-                    <input type="radio" name="rating" id="rating-0" value="0">
-                    <label for="rating-0">0</label>
-                    <input type="radio" name="rating" id="rating-1" value="1">
-                    <label for="rating-1">1</label>
-                    <input type="radio" name="rating" id="rating-2" value="2">
-                    <label for="rating-2">2</label>
-                    <input type="radio" name="rating" id="rating-3" value="3">
-                    <label for="rating-3">3</label>
-                    <input type="radio" name="rating" id="rating-4" value="4">
-                    <label for="rating-4">4</label>
-                    <input type="radio" name="rating" id="rating-5" value="5">
-                    <label for="rating-5">5</label>
-                </div>
-                </div>
-                <div class="little-text">
-                    <p>Did you answer correctly?</p>
-                </div>
-                <div class="yn-rating">
-                    <div>
-                        <input type="radio" id="yes" name="answer" value="yes">
-                        <label for="yes">Yes</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="no" name="answer" value="no">
-                        <label for="no">No</label>
-                    </div>
-                </div>
-                
-                <!-- Button to submit the rating -->
-                <div class="submit-btn">
-                    <button onclick="nextRow()">Submit</button>
-                </div>
-            </div>
-
-            </main>
-        </div>
-    </body>
-</html>
-
-
-<!-- SCRIPT FUNCTIONS FOR THIS PAGE -->
-<script>
-    const dataArray = [
-        { id: '1', question: 'Who is the teacher for 490 Senior Project class?', answer: 'Mr. Atencio'},
-        { id: '2', question: 'How far away is Jupiter from Earth?', answer: '601 million miles away'},
-        { id: '3', question: 'Will Vini Remeber his password?', answer: 'Yes, I believe.'}
-    ];
-
-    //function to unselect radio inupts
-    function unselectRadioInputs(groupName) {
-        var radioInputs = document.getElementsByName(groupName);
-        for (var i = 0; i < radioInputs.length; i++) {
-        radioInputs[i].checked = false;
-        }
-    }
-
-    //function to go to next page
-    function goToNextPage() {
-        window.location.href = "/dashboard.html";
-    }
-
-
-    let currentIndex = 0;
-      const frontContainer = document.getElementById('front-container');
-      const backContainer = document.getElementById('back-container');
-      const numContainer = document.getElementById('num-container');
-      
-      //function displayData
-      const displayData = () => {
-        const data = dataArray[currentIndex];
-        frontContainer.innerText = 
-        `
-        Question:
-         ${data.question}`;
         
-         backContainer.innerText = 
-         `
-         Answer: 
-         ${data.answer}`;
-
-        numContainer.innerText = `${data.id} / ${dataArray.length}`;
-      };
-      
-      displayData();
-      
-      //function nextRow
-      const nextRow = () => {
-        currentIndex++;
-        if (currentIndex >= dataArray.length) {
-          alert('Finished Guided Learning flashcards!! Well done!');
-        } else {
-          displayData();
-          unselectRadioInputs("rating");
-          unselectRadioInputs("answer");
-        }
-      };
-
-</script>
+            <!--<main>-->
+        <main class="main-container">	
+            <div class="main-title">
+                <p class="font-weight-bold">GUIDED LEARNING</p>
+            </div>
+    
+    
+	<section class="container">
+        <div class="card-gl">
+            <img src="{{ url_for('static', filename='images/cards.png')}}" class="card-img">
+            <h2>Guided Learning</h2>
+            <p>You have <strong>8</strong> cards to study today! Click here to get started on guided learning!</p>
+            <!-- Have url to guided cards -->
+            <a href="/guidedcards">Start <span>&rarr;</span></a>
+        </div>
+        <div class="card-gl">
+            <img src="{{ url_for('static', filename='images/Review.png')}}" class="card-img">
+            <h2>Review</h2>
+            <p>Want to review the guided learning cards from today? Practice more to study!</p>
+            <a href="/mylibrary">Review <span>&rarr;</span></a>
+        </div>
+        <div class="card-gl">
+            <img src="{{ url_for('static', filename='images/Prioritize.png')}}" class="card-img">
+            <h2>Prioritize</h2>
+            <p>Want to add more cards to study list? Add, delete, or edit cards for guided learning here.</p>
+            <a href="">Prioritize <span>&rarr;</span></a>
+        </div>
+    
+	</main>
+    </div>
+</body>
+</html>
