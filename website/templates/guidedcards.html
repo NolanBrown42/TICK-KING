@@ -79,25 +79,15 @@
             <!-- Flash card for guided learning -->
             <div class="card-container">
                 <div class="thecard">
-                    <div class="thefront">
-                        <div class="card-padding">
-                        <h3>Question:</h3>
-                        <p>Why did Mr. Atencio's house have so many problems with it?</p>
-                        </div>
+                    <div id="front-container" class="thefront">
                     </div>
-                    <div class="theback">
-                        <h3>Answer:</h3>
-                        <div class="card-padding">
-                        <p>The workers have gotten lazy and the project manager needs to take a project management class!</p>
-                        </div>
-                    </div>
+                    <div id="back-container" class="theback"></div>
                 </div>
             </div>
             
             <!-- Writing and buttons underneath -->
             <div class="bottom-content">
-                <div class="num-box">
-                    <p>1 / 8</p>
+                <div class="num-box" id="num-container">
                 </div>
                 <br> <!-- line break -->
                 <p>How confident were you with your answer?</p>
@@ -118,14 +108,22 @@
                 </div>
                 </div>
                 <div class="little-text">
-                    <p>Review card again in:<br>0 - immediately | 1 - one day | 2 - three days | 3 - five days | 4 - one week | 5 - two weeks</p>
+                    <p>Did you answer correctly?</p>
+                </div>
+                <div class="yn-rating">
+                    <div>
+                        <input type="radio" id="yes" name="answer" value="yes">
+                        <label for="yes">Yes</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="no" name="answer" value="no">
+                        <label for="no">No</label>
+                    </div>
                 </div>
                 
                 <!-- Button to submit the rating -->
                 <div class="submit-btn">
-                    <form>
-                        <input type="submit" value="submit" name="rate-btn">
-                    </form>
+                    <button onclick="nextRow()">Submit</button>
                 </div>
             </div>
 
@@ -133,3 +131,63 @@
         </div>
     </body>
 </html>
+
+
+<!-- SCRIPT FUNCTIONS FOR THIS PAGE -->
+<script>
+    const dataArray = [
+        { id: '1', question: 'Who is the teacher for 490 Senior Project class?', answer: 'Mr. Atencio'},
+        { id: '2', question: 'How far away is Jupiter from Earth?', answer: '601 million miles away'},
+        { id: '3', question: 'Will Vini Remeber his password?', answer: 'Yes, I believe.'}
+    ];
+
+    //function to unselect radio inupts
+    function unselectRadioInputs(groupName) {
+        var radioInputs = document.getElementsByName(groupName);
+        for (var i = 0; i < radioInputs.length; i++) {
+        radioInputs[i].checked = false;
+        }
+    }
+
+    //function to go to next page
+    function goToNextPage() {
+        window.location.href = "/dashboard.html";
+    }
+
+
+    let currentIndex = 0;
+      const frontContainer = document.getElementById('front-container');
+      const backContainer = document.getElementById('back-container');
+      const numContainer = document.getElementById('num-container');
+      
+      //function displayData
+      const displayData = () => {
+        const data = dataArray[currentIndex];
+        frontContainer.innerText = 
+        `
+        Question:
+         ${data.question}`;
+        
+         backContainer.innerText = 
+         `
+         Answer: 
+         ${data.answer}`;
+
+        numContainer.innerText = `${data.id} / ${dataArray.length}`;
+      };
+      
+      displayData();
+      
+      //function nextRow
+      const nextRow = () => {
+        currentIndex++;
+        if (currentIndex >= dataArray.length) {
+          alert('Finished Guided Learning flashcards!! Well done!');
+        } else {
+          displayData();
+          unselectRadioInputs("rating");
+          unselectRadioInputs("answer");
+        }
+      };
+
+</script>
